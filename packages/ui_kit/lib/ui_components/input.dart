@@ -38,7 +38,7 @@ class _SimpleInputState extends State<Input> {
   void initState() {
     super.initState();
     _controller = TextEditingController(text: widget.value);
-    _showPassword = true;
+    _showPassword = false;
   }
 
   @override
@@ -80,7 +80,7 @@ class _SimpleInputState extends State<Input> {
                   filled: true,
                   fillColor: widget.hasError
                       ?Color(0x1AFD3535)
-                      : ui.colors.inputBg,
+                      : ui.colors.inputStroke2,
 
                   // Иконка глаза для пароля
                   suffixIcon: widget.isPassword && widget.showEyeIcon
