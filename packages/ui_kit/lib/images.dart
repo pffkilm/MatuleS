@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class AppImages {
 
@@ -46,6 +47,10 @@ class AppImages {
       width: size,
       height: size,
       color: color,
+      package: MatuleKit.usePackageForImages ? 'ui_kit' : null, // ИСПОЛЬЗУЕМ ФЛАГ
     );
   }
+
 }
+
+

@@ -31,6 +31,7 @@ export 'ui_components/cart/card.dart';
 
 
 class MatuleKit {
+  static bool usePackageForImages = false;
   static final MatuleKit _instance = MatuleKit._internal();
   factory MatuleKit() => _instance;
   MatuleKit._internal();
