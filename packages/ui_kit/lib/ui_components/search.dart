@@ -5,11 +5,12 @@ class SimpleSearchBar extends StatefulWidget {
   const SimpleSearchBar({super.key});
 
   @override
-  State<SimpleSearchBar> createState() => _SimpleSearchBarState();
+  State<SimpleSearchBar> createState() => _SearchFieldState();
 }
 
-class _SimpleSearchBarState extends State<SimpleSearchBar> {
+class _SearchFieldState extends State<SimpleSearchBar> {
   final TextEditingController _controller = TextEditingController();
+  final FocusNode _focusNode = FocusNode(); // Добавил FocusNode
   bool _showClose = false;
 
   @override
@@ -20,11 +21,18 @@ class _SimpleSearchBarState extends State<SimpleSearchBar> {
         _showClose = _controller.text.isNotEmpty;
       });
     });
+    // Следим за фокусом
+    _focusNode.addListener(() {
+      setState(() {
+        _showClose = _controller.text.isNotEmpty || _focusNode.hasFocus;
+      });
+    });
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.dispose(); // Не забываем удалить
     super.dispose();
   }
 
@@ -34,41 +42,44 @@ class _SimpleSearchBarState extends State<SimpleSearchBar> {
       width: 335,
       height: 48,
       decoration: BoxDecoration(
-        color: ui.colors.input,
+        color: Color(0xFFF5F5F9),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: ui.colors.inputStroke2,
+          color: Color(0xFFEBEBEB),
           width: 1,
         ),
       ),
       padding: const EdgeInsets.only(left: 14, right: 19),
       child: Row(
         children: [
-          ui.images.search(),
+          ui.images.search(size: 20, color: Color(0xFF7E7E9A)),
           const SizedBox(width: 8),
           Expanded(
             child: TextField(
               controller: _controller,
+              focusNode: _focusNode,
+              cursorColor: ui.colors.accent,
               decoration: InputDecoration(
                 hintText: 'Искать описание',
                 hintStyle: ui.typography.headlineRegular.copyWith(
-                  color: ui.colors.inputText,
+                  color: Color(0xFF939396),
                 ),
                 border: InputBorder.none,
               ),
               style: const TextStyle(fontSize: 14),
             ),
           ),
+          // Изменил условие: показываем крестик если есть текст ИЛИ поле в фокусе
           if (_showClose)
             GestureDetector(
               onTap: () {
                 _controller.clear();
+                _focusNode.requestFocus(); // Оставляем фокус после очистки
               },
-              child: ui.images.close(),
+              child: ui.images.close(size: 20, color: Color(0xFF7E7E9A)),
             ),
         ],
       ),
     );
   }
 }
-
