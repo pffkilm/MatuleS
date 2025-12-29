@@ -212,7 +212,7 @@ class _MyFormState extends State<MyForm> {
                       onPressed: (){},
                       enabled: true,
                     ), ),
-
+                    ui.search,
                     SizedBox(height: 10),
                     ui.bottomNavigation.create(initialIndex: 0),
                     ui.bottomNavigation.create(initialIndex: 1),
@@ -220,7 +220,7 @@ class _MyFormState extends State<MyForm> {
                     ui.bottomNavigation.create(initialIndex: 3),
 
 
-                    
+
 
                   ],
                 ),
