@@ -10,7 +10,7 @@ class SimpleSearchBar extends StatefulWidget {
 
 class _SearchFieldState extends State<SimpleSearchBar> {
   final TextEditingController _controller = TextEditingController();
-  final FocusNode _focusNode = FocusNode(); // Добавил FocusNode
+  final FocusNode _focusNode = FocusNode();
   bool _showClose = false;
 
   @override
@@ -21,7 +21,6 @@ class _SearchFieldState extends State<SimpleSearchBar> {
         _showClose = _controller.text.isNotEmpty;
       });
     });
-    // Следим за фокусом
     _focusNode.addListener(() {
       setState(() {
         _showClose = _controller.text.isNotEmpty || _focusNode.hasFocus;
@@ -32,7 +31,7 @@ class _SearchFieldState extends State<SimpleSearchBar> {
   @override
   void dispose() {
     _controller.dispose();
-    _focusNode.dispose(); // Не забываем удалить
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -69,12 +68,11 @@ class _SearchFieldState extends State<SimpleSearchBar> {
               style: const TextStyle(fontSize: 14),
             ),
           ),
-          // Изменил условие: показываем крестик если есть текст ИЛИ поле в фокусе
           if (_showClose)
             GestureDetector(
               onTap: () {
                 _controller.clear();
-                _focusNode.requestFocus(); // Оставляем фокус после очистки
+                _focusNode.requestFocus();
               },
               child: ui.images.close(size: 20, color: Color(0xFF7E7E9A)),
             ),
