@@ -51,9 +51,8 @@ class _SimpleSearchBarState extends State<SimpleSearchBar> {
               controller: _controller,
               decoration: InputDecoration(
                 hintText: 'Искать описание',
-                hintStyle: ui.typography.textRegular.copyWith(
+                hintStyle: ui.typography.headlineRegular.copyWith(
                   color: ui.colors.inputText,
-                  fontSize: 16
                 ),
                 border: InputBorder.none,
               ),
