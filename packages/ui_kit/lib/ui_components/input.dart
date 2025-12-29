@@ -79,8 +79,8 @@ class _SimpleInputState extends State<Input> {
                   // Заливка
                   filled: true,
                   fillColor: widget.hasError
-                      ?Color(0x1AFD3535)
-                      : ui.colors.inputStroke2,
+                      ? Color(0x1AFD3535)
+                      : ui.colors.input,
 
                   // Иконка глаза для пароля
                   suffixIcon: widget.isPassword && widget.showEyeIcon
