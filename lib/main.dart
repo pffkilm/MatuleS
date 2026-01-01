@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maluta_x/storyBook.dart';
+import 'package:malutaS/storyBook.dart';
 
 
 void main() {
