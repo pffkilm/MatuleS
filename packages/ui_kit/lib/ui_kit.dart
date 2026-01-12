@@ -47,7 +47,7 @@ class MatuleKit {
   SmallButton get smallButton => SmallButton();
   Input get input => Input();
   LogoButtons get logo => LogoButtons();
-  BottomNavigationHelper get bottomNavigation => BottomNavigationHelper();
+ BottomNavigation get tabBar => BottomNavigation();
   Counter get counter => Counter();
   Menu get menu =>  Menu(text: '',);
   Toggle get toggle =>  Toggle ();

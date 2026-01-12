@@ -214,10 +214,10 @@ class _MyFormState extends State<MyForm> {
                     ), ),
                     ui.search,
                     SizedBox(height: 10),
-                    ui.bottomNavigation.create(initialIndex: 0),
-                    ui.bottomNavigation.create(initialIndex: 1),
-                    ui.bottomNavigation.create(initialIndex: 2),
-                    ui.bottomNavigation.create(initialIndex: 3),
+                    ui.tabBar.create(initialIndex: 0),
+                    ui.tabBar.create(initialIndex: 1),
+                    ui.tabBar.create(initialIndex: 2),
+                    ui.tabBar.create(initialIndex: 3),
 
 
 
