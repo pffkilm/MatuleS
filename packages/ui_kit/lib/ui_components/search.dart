@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class SimpleSearchBar extends StatefulWidget {
-  const SimpleSearchBar({super.key});
+  final double? width;
+
+  const SimpleSearchBar({
+    super.key,
+    this.width,
+  });
 
   @override
   State<SimpleSearchBar> createState() => _SearchFieldState();
@@ -38,7 +43,7 @@ class _SearchFieldState extends State<SimpleSearchBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 335,
+      width: widget.width,
       height: 48,
       decoration: BoxDecoration(
         color: Color(0xFFF5F5F9),
@@ -59,7 +64,7 @@ class _SearchFieldState extends State<SimpleSearchBar> {
               focusNode: _focusNode,
               cursorColor: ui.colors.accent,
               decoration: InputDecoration(
-                hintText: 'Искать описание',
+                hintText: 'Искать описания',
                 hintStyle: ui.typography.headlineRegular.copyWith(
                   color: Color(0xFF939396),
                 ),
