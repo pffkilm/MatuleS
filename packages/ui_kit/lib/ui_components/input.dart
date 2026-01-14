@@ -100,7 +100,7 @@ class _SimpleInputState extends State<Input> {
                       widget.hasError
                           ? ui.colors.error
                           : ui.colors.accent.withOpacity(0.5),
-                      2),
+                      1),
                   enabledBorder: _buildBorder(_getBorderColor(), 1),
                 ),
                 onChanged: (text) {
