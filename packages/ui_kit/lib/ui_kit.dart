@@ -53,7 +53,6 @@ class MatuleKit {
   Menu get menu =>  Menu(text: '',);
   Toggle get toggle =>  Toggle ();
   Cards get base => Cards();
-
   ProductCard get productCard => ProductCard();
   SimpleSearchBar get search => SimpleSearchBar();
 }
